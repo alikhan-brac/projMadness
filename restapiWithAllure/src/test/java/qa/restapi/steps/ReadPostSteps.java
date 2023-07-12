@@ -3,13 +3,14 @@ package qa.restapi.steps;
 import org.testng.asserts.SoftAssert;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
+import qa.restapi.constants.Endpoints;
 import qa.restapi.model.Post;
 
-public class ReadPostSteps extends BasePostSteps {
+public class ReadPostSteps extends BaseSteps {
 
 	@Step("Get specific post")
-	public Response readPost(String endpoint) {
-		return commonRequestSpecification().get(endpoint);
+	public Response readPost(int id) {
+		return commonRequestSpecification().pathParam("id", id).get(Endpoints.ENDPOINT_SPECIFIC_POST);
 	}
 
 	@Step("check post information is correct as of test_data")

@@ -8,17 +8,19 @@ import com.google.common.collect.Ordering;
 
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
+import qa.restapi.constants.Constants;
+import qa.restapi.constants.Endpoints;
 
-public class ListPostSteps extends BasePostSteps {
+public class ListPostSteps extends BaseSteps {
 
 	@Step("Get list of posts")
-	public Response listPost(String endpoint) {
-		return commonRequestSpecification().get(endpoint);
+	public Response listPost() {
+		return commonRequestSpecification().get(Endpoints.ENDPOINT_POSTS);
 	}
 
 	@Step("get the list of IDs of posts from response")
 	public List<String> getListOfId(Response response) {
-		List<String> idList = response.jsonPath().getList("id");
+		List<String> idList = response.jsonPath().getList(Constants.ID_ATTRIBUTE_OF_POST);
 		return idList;
 	}
 

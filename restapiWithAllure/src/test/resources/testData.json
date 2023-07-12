@@ -1,8 +1,8 @@
 {
-	"postIDToGetSecondStep":"/99",
+	"postIDToGetSecondStep":"99",
 	"userIDToCompare":10,
 	"postIDToCompare":99,
-	"postIDToGetThirdStep":"/150",
+	"postIDToGetThirdStep":"150",
 	"userIDForfourthStep":1,
 	"randomWordCount":3,
 	"userIdToCompare": {

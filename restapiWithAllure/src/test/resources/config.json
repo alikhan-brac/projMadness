@@ -1,5 +1,7 @@
 {
-  "apiurl": "https://jsonplaceholder.typicode.com",
-  "post":"/posts",
-  "user":"/users"
+  "apiurl": "https://jsonplaceholder.typicode.com/",
+  "post":"posts/",
+  "user":"users/",
+  "specificPost":"/posts/{id}",
+  "specificUser":"/users/{id}"
 }

@@ -5,13 +5,14 @@ import org.testng.asserts.SoftAssert;
 import io.qameta.allure.Step;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import qa.restapi.constants.Endpoints;
 import qa.restapi.model.Post;
 
-public class CreatePostSteps extends BasePostSteps {
+public class CreatePostSteps extends BaseSteps {
 
 	@Step("create post")
-	public Response createPost(Post post, String endpoint) {
-		return commonRequestSpecification().contentType(ContentType.JSON).body(post).post(endpoint);
+	public Response createPost(Post post) {
+		return commonRequestSpecification().contentType(ContentType.JSON).body(post).post(Endpoints.ENDPOINT_POSTS);
 	}
 
 	@Step("check post information is correct as per creation")

@@ -5,11 +5,13 @@ import java.io.File;
 import aquality.selenium.browser.AqualityServices;
 import aquality.selenium.core.utilities.ISettingsFile;
 import aquality.selenium.core.utilities.JsonSettingsFile;
+import lombok.experimental.UtilityClass;
 
+@UtilityClass
 public class JsonDataPuller {
 	private static ISettingsFile dataPull;
 
-	public static String dataPuller(String fileName, String field) {
+	public static String dataPull(String fileName, String field) {
 		String fieldValue = null;
 		try {
 			dataPull = new JsonSettingsFile(new File(fileName));

@@ -7,8 +7,11 @@ import java.io.IOException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.qameta.allure.Step;
+import lombok.experimental.UtilityClass;
+import qa.restapi.constants.FilePaths;
 import qa.restapi.model.User;
 
+@UtilityClass
 public class UserToCompare {
 
 	@Step("get data from test_data for user id=5")
@@ -17,7 +20,7 @@ public class UserToCompare {
 		User userFromTestData = new User();
 		try {
 			userFromTestData = objectMapper
-					.readValue(JsonDataPuller.dataPuller(Constants.TEST_DATA, "/userIdToCompare"), User.class);
+					.readValue(JsonDataPuller.dataPull(FilePaths.TEST_DATA, "/userIdToCompare"), User.class);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
