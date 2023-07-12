@@ -5,6 +5,7 @@ import qa.restapi.util.JsonDataPuller;
 
 @UtilityClass
 public class Constants {
+	
 	public static final String ID_ATTRIBUTE_OF_POST="id";
 	public static final int POST_ID_FOR_STEP2 = Integer
 			.valueOf(JsonDataPuller.dataPull(FilePaths.TEST_DATA, "/postIDToGetSecondStep"));
